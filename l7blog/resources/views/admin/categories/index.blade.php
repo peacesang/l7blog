@@ -14,8 +14,15 @@
         @foreach($categories as $category)
       <tr>
         <td>{{$category->name}}</td>
-        <td>edite</td>
-        <td>delete</td>
+        <td><a class="btn btn-primary" href="{{route('categories.edit',$category->id)}}">edit</a></td>
+        <td>
+                <form action="{{route('categories.destroy',$category->id)}}" method="post">
+                    @csrf
+                    @method('DELETE')
+                    <input type="submit" value="Delete">
+                </form>
+        </td> 
+        
       </tr>
       @endforeach
     </tbody>

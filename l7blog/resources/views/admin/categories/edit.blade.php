@@ -4,22 +4,25 @@
 
 
 <div class="card">
-   @include('admin.includes.errors')
+        @include('admin.includes.errors')
 
     <div class="card-header">
-        Create a category
+        update a category
     </div>
     <div class="card-body">
-    <form action="{{route('categories.store')}}" method="post" enctype="multipart/form-data">
+    <form action="{{route('categories.update',$category->id)}}" method="post" enctype="multipart/form-data">
                 @csrf
+                @method('PUT')
+           
+            
                 <div class="form-group">
                     <label for="name"> Name</label>
-                    <input type="text" name="name" class="form-control">
+                    <input type="text" value="{{$category->name}}" name="name" class="form-control">
                 </div>
                 
                 <div class="form-group">
                        <div class="text-center">
-                           <button class="btn btn-success" type="submit">Store Category</button>
+                           <button class="btn btn-success" type="submit">Update Category</button>
                        </div>
                 </div>
             </form>

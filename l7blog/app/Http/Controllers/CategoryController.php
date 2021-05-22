@@ -71,6 +71,13 @@ class CategoryController extends Controller
     public function edit(Category $category)
     {
         //
+        //dd($category->id);
+        $category=Category::find($category->id);
+
+        //dd($category);
+
+        return view('admin.categories.edit')->with('category',$category);
+        
     }
 
     /**
@@ -83,6 +90,12 @@ class CategoryController extends Controller
     public function update(Request $request, Category $category)
     {
         //
+        $category=Category::find($category->id);
+        $category->name=$request->name;
+        $category->update();
+
+        return redirect()->route('categories.index');
+
     }
 
     /**
@@ -94,5 +107,8 @@ class CategoryController extends Controller
     public function destroy(Category $category)
     {
         //
+        $category=Category::find($category->id);
+        $category->destroy($category->id);
+         return redirect()->route('categories.index');
     }
 }
