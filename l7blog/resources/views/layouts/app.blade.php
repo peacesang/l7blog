@@ -77,8 +77,10 @@
                 @if(Auth::check())
                     <div class="col-lg-4">
                         <ul class="list-group">
-                            <li class="list-group-item"><a href="{{ route('home')}}">Home</a></li>
+                        <li class="list-group-item"><a href="{{ route('home')}}">Home</a></li>
+                        <li class="list-group-item"><a href="{{ route('categories.index')}}">Categories</a></li>
                         <li class="list-group-item"><a href="{{ route('posts.create')}}">Create new post</a></li>
+                        <li class="list-group-item"><a href="{{ route('categories.create')}}">Create new category</a></li>
                         </ul>
                     </div>
                 @endif

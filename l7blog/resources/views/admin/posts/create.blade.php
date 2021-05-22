@@ -25,11 +25,11 @@
                     <input type="text" name="title" class="form-control">
                 </div>
                 <div class="form-group">
-                    <label for="title"> Featured image</label>
+                    <label for="featured_image"> Featured image</label>
                     <input type="file" name="featured" class="form-control">
                 </div>
                 <div class="form-group">
-                    <label for="title"> Content</label>
+                    <label for="content"> Content</label>
                     <textarea type="textarea" name="content" cols="5" rows="5" class="form-control"></textarea>
                 </div>
                 <div class="form-group">
