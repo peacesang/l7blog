@@ -12,12 +12,26 @@
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}" defer></script>
 
+
+   
+    @if(Session::has('success'))
+    {{Session::get('success') }}
+    @endif
+    <script>
+    
+    <script>
+            @if(Session::has('success'))
+                toastr.success("{{ Session::get('success') }}")
+            @endif
+    </script>
+
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    @toastr_css
 </head>
 <body>
     <div id="app">
@@ -94,5 +108,8 @@
 
         
     </div>
+    @jquery
+@toastr_js
+@toastr_render
 </body>
 </html>
