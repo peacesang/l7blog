@@ -97,6 +97,8 @@
                         <li class="list-group-item"><a href="{{ route('posts.trashed')}}">All trashed posts</a></li>
                         <li class="list-group-item"><a href="{{ route('posts.create')}}">Create new post</a></li>
                         <li class="list-group-item"><a href="{{ route('categories.create')}}">Create new category</a></li>
+                        <li class="list-group-item"><a href="{{ route('tags.index')}}">All tags</a></li>
+                        <li class="list-group-item"><a href="{{ route('tags.create')}}">Create new tag</a></li>
                         </ul>
                     </div>
                 @endif

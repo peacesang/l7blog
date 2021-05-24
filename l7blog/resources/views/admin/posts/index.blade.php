@@ -1,7 +1,9 @@
 @extends('layouts.app')
 
 @section('content')
-
+<div class="card">
+    <div class="card-header text-center">View all Posts</div>
+</div>
 <table class="table table-hover">
     <thead>
       <tr>
@@ -12,6 +14,9 @@
       </tr>
     </thead>
     <tbody>
+      @if(!$posts->count()>0)
+        <tr><th class="text-center" colspan="4">No posts Created</th></tr>
+      @endif
         @foreach($posts as $post)
       <tr>
         <td><img class="img-fluid" width="100px" src="{{$post->featured}}"></td>

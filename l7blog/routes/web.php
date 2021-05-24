@@ -30,6 +30,7 @@ Route::group(['prefix'=>'admin', 'middleware'=>'auth'], function(){
     Route::resources([
         'posts' => 'PostController',
         'categories' => 'CategoryController',
+        'tags' => 'TagsController',
     ]);
 });
 
