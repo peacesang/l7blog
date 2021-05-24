@@ -6,8 +6,8 @@
     <thead>
       <tr>
         <th>Category name</th>
-        <th>Editing</th>
-        <th>Deleting</th>
+        <th>Edit</th>
+        <th>Delete</th>
       </tr>
     </thead>
     <tbody>

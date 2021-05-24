@@ -92,7 +92,9 @@
                     <div class="col-lg-4">
                         <ul class="list-group">
                         <li class="list-group-item"><a href="{{ route('home')}}">Home</a></li>
-                        <li class="list-group-item"><a href="{{ route('categories.index')}}">Categories</a></li>
+                        <li class="list-group-item"><a href="{{ route('categories.index')}}">All Categories</a></li>
+                        <li class="list-group-item"><a href="{{ route('posts.index')}}">All Posts</a></li>
+                        <li class="list-group-item"><a href="{{ route('posts.trashed')}}">All trashed posts</a></li>
                         <li class="list-group-item"><a href="{{ route('posts.create')}}">Create new post</a></li>
                         <li class="list-group-item"><a href="{{ route('categories.create')}}">Create new category</a></li>
                         </ul>
@@ -108,7 +110,7 @@
 
         
     </div>
-    @jquery
+@jquery
 @toastr_js
 @toastr_render
 </body>
