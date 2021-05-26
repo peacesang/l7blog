@@ -32,10 +32,26 @@
                     <label for="category"> Select category</label>
                    <select name="category_id" class="form-control">
                        @foreach($categories as $category)
-                   <option value="{{$category->id}}">{{$category->name}}</option>
+                   <option value="{{$category->id}}"  >{{$category->name}}</option>
                        @endforeach
                    </select>
                 </div>
+                
+              
+                <div class="form-group">
+                        <label for="tags"> Select Tags:</label>
+                        <br>
+                        @foreach($tags as $tag)
+                        <div class="form-check-inline">
+                            <label class="form-check-label">
+                            <input type="checkbox" class="form-check-input" name="tags[]" value="{{$tag->id}}">{{$tag->tag}}
+                            </label>
+                        </div>
+                        @endforeach 
+                </div>
+               
+                      
+                      
                 <div class="form-group">
                     <label for="content"> Content</label>
                     <textarea type="textarea" name="content" cols="5" rows="5" class="form-control"></textarea>

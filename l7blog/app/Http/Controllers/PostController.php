@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Post;
+use App\Tag;
 use App\Category;
 use Illuminate\Http\Request;
 use Illuminate\Support\Str;
@@ -34,7 +35,7 @@ class PostController extends Controller
             toastr()->info('You must create first categories');
             return redirect()->back();
         }
-        return view('admin.posts.create')->with('categories',Category::all());
+        return view('admin.posts.create')->with('categories',Category::all())->with('tags',Tag::all());
     }
 
     /**
@@ -51,10 +52,11 @@ class PostController extends Controller
             'featured'=>'required|image',
             'content'=>'required',
             'category_id'=>'required',
+            'tags'=>'required',
             
 
         ]);
-        
+        //dd($request);
         $featured=$request->featured;
 
         $featured_new_name=time().$featured->getClientOriginalName();
@@ -69,7 +71,7 @@ class PostController extends Controller
            'category_id'=> $request->category_id, 
            'slug'=>Str::slug($request->title)
         ]);
-
+            $post->tags()->attach($request->tags);
        
         toastr()->success('Category created successfully');
 
@@ -101,7 +103,7 @@ class PostController extends Controller
 
        // dd($post);
 
-      return view('admin.posts.edit')->with('post',$post)->with('categories', Category::all());
+      return view('admin.posts.edit')->with('post',$post)->with('categories', Category::all())->with('tags',Tag::all());
     }
 
     /**

@@ -13,12 +13,19 @@ class UsersTableSeeder extends Seeder
     public function run()
     {
         //
-        User::create([
+        $user=User::create([
             'name' => 'pasang sherpa',
             'email' => 'admin@gmail.com',
-            'password' => bcrypt('123456'),
+            'password' => Hash::make('123456'),
+            'admin'=> 1,
         ]);
 
-        
+        App\Profile::create([
+            'user_id'=>$user->id,
+            "avatar"=>'uploads/avatars/1.JPG',
+            'about'=>'lorem kdsflsjfl',
+            'facebook'=>'facebook.com',
+            'youtube' => 'youtube.com',
+        ]);        
     }
 }
