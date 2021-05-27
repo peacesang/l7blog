@@ -31,7 +31,11 @@ Route::group(['prefix'=>'admin', 'middleware'=>'auth'], function(){
         'posts' => 'PostController',
         'categories' => 'CategoryController',
         'tags' => 'TagsController',
+        'users' => 'UserController',
+
     ]);
+    Route::get('users/admin/{id}', 'UserController@admin')->name('users.admin');
+    Route::get('users/not-admin/{id}', 'UserController@not_admin')->name('users.not.admin');
 });
 
 
