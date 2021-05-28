@@ -8,7 +8,7 @@
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
     <title>{{ config('app.name', 'Laravel') }}</title>
-
+    
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}" defer></script>
 
@@ -30,8 +30,10 @@
     <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
 
     <!-- Styles -->
+   
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     @toastr_css
+   
 </head>
 <body>
     <div id="app">
@@ -106,7 +108,9 @@
                         <li class="list-group-item"><a href="{{ route('categories.create')}}">Create new category</a></li>
                         <li class="list-group-item"><a href="{{ route('tags.index')}}">All tags</a></li>
                         <li class="list-group-item"><a href="{{ route('tags.create')}}">Create new tag</a></li>
-                        
+                        @if(Auth::user()->admin)
+                        <li class="list-group-item"><a href="{{ route('settings.index')}}">Settings</a></li>
+                        @endif
                         </ul>
                     </div>
                 @endif
@@ -123,5 +127,7 @@
 @jquery
 @toastr_js
 @toastr_render
+
+
 </body>
 </html>

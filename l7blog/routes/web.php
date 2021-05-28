@@ -33,6 +33,7 @@ Route::group(['prefix'=>'admin', 'middleware'=>'auth'], function(){
         'tags' => 'TagsController',
         'users' => 'UserController',
         'profile' => 'ProfileController',
+        'settings'=>"SettingController",
 
     ]);
     Route::get('users/admin/{id}', 'UserController@admin')->name('users.admin');

@@ -54,8 +54,13 @@
                       
                 <div class="form-group">
                     <label for="content"> Content</label>
-                    <textarea type="textarea" name="content" cols="5" rows="5" class="form-control"></textarea>
+                    <textarea id="summernote"  type="textarea" name="content" cols="10" rows="10" class="form-control"></textarea>
                 </div>
+                <div id="summernote">dfgd</div>
+                <textarea class="form-control" name="summernote" id="summernote"></textarea>
+
+
+                
                 <div class="form-group">
                        <div class="text-center">
                            <button class="btn btn-success" type="submit">Store Post</button>
@@ -66,3 +71,5 @@
 </div>
 
 @endsection
+
+
