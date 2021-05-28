@@ -28,10 +28,7 @@
                     <label for="title"> Email</label>
                     <input type="email" name="email" class="form-control">
                 </div>
-                <div class="form-group">
-                    <label for="featured_image"> Featured image</label>
-                    <input type="file" name="featured" class="form-control">
-                </div>      
+                 
                 
                           
                                     

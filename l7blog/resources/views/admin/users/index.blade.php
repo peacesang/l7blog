@@ -10,7 +10,7 @@
         <th>Image</th>
         <th>Name</th>
         <th>Permission</th>
-        <th>Edit</th>
+       
         <th>Delete</th>
       </tr>
     </thead>
@@ -30,13 +30,16 @@
             @endif
         
         </td>
-        <td><a class="btn btn-primary" href="{{route('users.edit',$user->id)}}">edit</a></td>
+       
         <td>
-                <form action="{{route('users.destroy',$user->id)}}" method="post">
-                    @csrf
-                    @method('DELETE')
-                    <input type="submit" class="btn btn-danger" value="Trash">
-                </form>
+          @if(Auth::id() !==$user->id)
+          <form action="{{route('users.destroy',$user->id)}}" method="post">
+              @csrf
+              @method('DELETE')
+              <input type="submit" class="btn btn-danger" value="Delete">
+          </form>
+          @endif
+                
         </td> 
         
       </tr>

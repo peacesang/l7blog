@@ -13,6 +13,10 @@ class UserController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+    public function __construct()
+    {
+        $this->middleware('admin');
+    }
     public function index()
     {
         //
@@ -104,6 +108,14 @@ class UserController extends Controller
     public function destroy($id)
     {
         //
+        $user=User::find($id);
+        $user->profile->delete();
+        $user->delete();
+
+        toastr()->success('User deleted permanently');
+
+        return redirect()->back();
+
     }
 
     public function admin($id)

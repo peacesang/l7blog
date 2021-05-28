@@ -94,13 +94,19 @@
                         <li class="list-group-item"><a href="{{ route('home')}}">Home</a></li>
                         <li class="list-group-item"><a href="{{ route('categories.index')}}">All Categories</a></li>
                         <li class="list-group-item"><a href="{{ route('posts.index')}}">All Posts</a></li>
+                        @if(Auth::user()->admin)
                         <li class="list-group-item"><a href="{{ route('users.index')}}">All Users</a></li>
+                        <li class="list-group-item"><a href="{{ route('users.create')}}">Create new user</a></li>
+                        @endif
+
+                         <li class="list-group-item"><a href="{{ route('profile.index')}}">My profile</a></li>
+                        
                         <li class="list-group-item"><a href="{{ route('posts.trashed')}}">All trashed posts</a></li>
                         <li class="list-group-item"><a href="{{ route('posts.create')}}">Create new post</a></li>
                         <li class="list-group-item"><a href="{{ route('categories.create')}}">Create new category</a></li>
                         <li class="list-group-item"><a href="{{ route('tags.index')}}">All tags</a></li>
                         <li class="list-group-item"><a href="{{ route('tags.create')}}">Create new tag</a></li>
-                        <li class="list-group-item"><a href="{{ route('users.create')}}">Create new user</a></li>
+                        
                         </ul>
                     </div>
                 @endif

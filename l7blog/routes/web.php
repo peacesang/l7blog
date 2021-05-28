@@ -32,6 +32,7 @@ Route::group(['prefix'=>'admin', 'middleware'=>'auth'], function(){
         'categories' => 'CategoryController',
         'tags' => 'TagsController',
         'users' => 'UserController',
+        'profile' => 'ProfileController',
 
     ]);
     Route::get('users/admin/{id}', 'UserController@admin')->name('users.admin');

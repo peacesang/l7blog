@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Category;
+use App\Post;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Session;
 
@@ -113,6 +114,12 @@ class CategoryController extends Controller
     {
         //
         $category=Category::find($category->id);
+        
+        foreach($category->posts as $post)
+        {
+            $post->forcedelete();
+        }
+     
         $category->destroy($category->id);
 
         Session::flash('success', 'Category deleted successfully');

@@ -30,9 +30,11 @@ class PostController extends Controller
     {
         //
         $categories=Category::all();
-        if($categories->count()==0)
+
+        $tags=Tag::all();
+        if($categories->count()==0 || $tags->count()==0)
         {
-            toastr()->info('You must create first categories');
+            toastr()->info('You must some tags or category to create post');
             return redirect()->back();
         }
         return view('admin.posts.create')->with('categories',Category::all())->with('tags',Tag::all());
