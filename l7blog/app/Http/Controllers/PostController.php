@@ -8,6 +8,8 @@ use App\Category;
 use Illuminate\Http\Request;
 use Illuminate\Support\Str;
 
+use Auth;
+
 class PostController extends Controller
 {
     /**
@@ -71,7 +73,8 @@ class PostController extends Controller
            'content'=>$request->content,
            'featured'=>'uploads/posts/' . $featured_new_name,
            'category_id'=> $request->category_id, 
-           'slug'=>Str::slug($request->title)
+           'slug'=>Str::slug($request->title),
+           'user_id'=>Auth::id(),
         ]);
             $post->tags()->attach($request->tags);
        

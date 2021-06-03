@@ -95,6 +95,29 @@ class FrontEndController extends Controller
                                 ->with('categories',Category::take(5)->get());
     }
 
+    public function result(Request $request)
+    {
+        //
+        // $posts=Post::where('title','like', '%' . $request->query . '%')->get();
+        $query=request('query');
+       
+
+        
+       
+
+        $posts = Post::where('title', 'LIKE', "%$query%")
+        ->latest()
+        ->get();
+
+        
+
+        return view('results')->with('posts',$posts)
+                                // ->with('title','Search results:'.$request->query)
+                                ->with('categories',Category::take(5)->get())
+                                ->with('website',Setting::first())
+                                ->with('query',$query);
+    }
+
     /**
      * Show the form for editing the specified resource.
      *

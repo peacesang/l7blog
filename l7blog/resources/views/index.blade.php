@@ -219,6 +219,7 @@
                                             <h6 class="case-item__title"><a href="{{route('post.single',$post->slug)}}">{{$post->title}}</a></h6>
                                         </div>
                                     </div>
+                                </div>
                                     @endforeach
         
                                     
@@ -230,7 +231,8 @@
                       
                         
                     </div>
-                    
+                
                 </div>
             </div>
+        
    @endsection

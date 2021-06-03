@@ -137,8 +137,9 @@
     <div class="container">
         <div class="row">
             <div class="form_search-wrap">
-                <form>
-                    <input class="overlay_search-input" placeholder="Type and hit Enter..." type="text">
+            <form method="GET" action="{{route('results')}}">
+                @csrf
+                    <input class="overlay_search-input" placeholder="Type and hit Enter..." name="query" type="text">
                     <a href="#" class="overlay_search-close">
                         <span></span>
                         <span></span>
@@ -166,6 +167,8 @@
 
 
 <!-- ...end JS Script -->
+<!-- Go to www.addthis.com/dashboard to customize your tools -->
+<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-60b8f50f21e86320"></script>
 
 </body>
 </html>
