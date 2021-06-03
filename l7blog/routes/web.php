@@ -14,9 +14,16 @@ use Illuminate\Support\Facades\Route;
 */
 
 
-Route::get('/', function () {
-    return view('welcome');
-});
+// Route::get('/', function () {
+//     return view('index');
+// });
+
+
+Route::get('/', 'FrontEndController@index');
+Route::get('/post/{slug}', 'FrontEndController@singlePost')->name('post.single');
+Route::get('/category/{id}', 'FrontEndController@category')->name('category.single');
+Route::get('/tag/{id}', 'FrontEndController@tag')->name('tag.single');
+
 
 Auth::routes();
 
@@ -34,6 +41,8 @@ Route::group(['prefix'=>'admin', 'middleware'=>'auth'], function(){
         'users' => 'UserController',
         'profile' => 'ProfileController',
         'settings'=>"SettingController",
+        'frontend'=>"FrontEndController",
+        
 
     ]);
     Route::get('users/admin/{id}', 'UserController@admin')->name('users.admin');
