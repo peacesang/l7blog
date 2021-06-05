@@ -29,7 +29,7 @@ Route::get('/results', 'FrontEndController@result')->name('results');
 
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/dashboard', 'HomeController@index')->name('home');
 
 Route::get('/admin/posts/trashed', 'PostController@trashed')->name('posts.trashed');
 Route::get('/admin/posts/restore/{id}', 'PostController@restore')->name('posts.restore');
